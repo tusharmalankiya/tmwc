@@ -11,7 +11,7 @@ This is a Python-based clone of the Unix `wc` (word count) command-line tool. It
 The tool supports the following options:
 
 ```bash
-usage: wc-tool.py [-h] [--bytes] [--lines] [--words] [--chars] [filename]
+usage: tmwc.py [-h] [--bytes] [--lines] [--words] [--chars] [filename]
 ```
 
 ### Options:
