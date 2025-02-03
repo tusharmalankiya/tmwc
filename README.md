@@ -19,40 +19,40 @@ usage: tmwc.py [-h] [--bytes] [--lines] [--words] [--chars] [filename]
 Show help message and exit.
 
 ```bash
-    python3 tmwc.py -h
+python3 tmwc.py -h
 ```
 
 #### -c, --bytes: 
 Print the number of bytes.
 
 ```bash
-    python3 tmwc.py -c <filename>
+python3 tmwc.py -c <filename>
 ```
 
 #### -l, --lines: 
 Print the number of lines.
 
 ```bash 
-    python3 tmwc.py -l <filename>
+python3 tmwc.py -l <filename>
 ```
 
 #### -w, --words: 
 Print the number of words.
 
 ```bash 
-    python3 tmwc.py -w <filename>
+python3 tmwc.py -w <filename>
 ```
 
 #### -m, --chars: 
 Print the number of characters.
 
 ```bash 
-    python3 tmwc.py -m <filename>
+python3 tmwc.py -m <filename>
 ```
 
 #### filename: 
 The file to count. If no filename is provided, the tool reads from stdin.
 
 ```bash 
-    cat <filename> | python3 tmwc.py -l
+cat <filename> | python3 tmwc.py -l
 ```
