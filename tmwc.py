@@ -11,7 +11,13 @@ def main():
     parser.add_argument('-m', '--chars', help='print the number of characters', action='store_true')
 
     args = parser.parse_args()
-    
+
+    empty_args = True
+    for key, value in vars(args).items():
+        if key != "filename" and value is True:
+            empty_args = False
+            break
+
     if args.filename:
         filename = args.filename
         with open(filename, 'rb') as f:
@@ -22,21 +28,20 @@ def main():
 
     if args.bytes:
         total_bytes = count_bytes(text)
-        print(f'''{total_bytes} {filename if args.filename else ''}''')
-    elif args.lines:
+    if args.lines:
         lines = count_lines(text)
-        print(f'''{lines} {filename if args.filename else ''}''')
-    elif args.words:
+    if args.words:
         words = count_words(text)
-        print(f'''{words} {filename if args.filename else ''}''')
-    elif args.chars:
+    if args.chars:
         chars = count_chars(text)
-        print(f'''{chars} {filename if args.filename else ''}''')
-    else:
+    if empty_args:
         total_bytes = count_bytes(text)
         lines = count_lines(text)
         words = count_words(text)
         print(f'''  {lines}  {words}  {total_bytes}  {filename if args.filename else ''}''')
+        return
+
+    print(f'''{lines if args.lines else ''}  {words if args.words else ''}  {chars if args.chars else ''}  {total_bytes if args.bytes else '' }  {filename if args.filename else ''}''')
 
 
 def count_bytes(text):
